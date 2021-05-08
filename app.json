@@ -1,0 +1,12 @@
+{
+  "name": "crpyto",
+  "displayName": "crpyto",
+  "expo": {
+    "name": "crpyto",
+    "slug": "crpyto",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
