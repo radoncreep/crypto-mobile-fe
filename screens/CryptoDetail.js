@@ -7,13 +7,14 @@ import {
     SafeAreaView,
     Platform,
     ScrollView,
-    Animated
+    Animated,
+    Image
 } from 'react-native';
 import { VictoryScatter, VictoryLine, VictoryChart, VictoryAxis } from "victory-native";
 import { VictoryCustomTheme } from "../styles"
 
-import { CurrencyLabel, HeaderBar, TextButton } from '../components';
-import { COLORS, dummyData, SIZES } from '../constants';
+import { CurrencyLabel, HeaderBar, PriceAlert, TextButton } from '../components';
+import { COLORS, dummyData, icons, SIZES } from '../constants';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const CryptoDetail = ({ navigation, route }) => {
@@ -224,6 +225,74 @@ const CryptoDetail = ({ navigation, route }) => {
                 {/* Dots */}
                 {renderDots()}
             </View>
+        );
+    };
+
+    function renderBuy() {
+        return (
+            <View style={{
+                marginTop: SIZES.padding,
+                marginHorizontal: SIZES.radius,
+                padding: SIZES.radius,
+                borderRadius: SIZES.radius,
+                backgroundColor: COLORS.white,
+                ...styles.shadow
+            }}>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    marginBottom: SIZES.radius
+                }}>
+                    {/* Currency */}
+                    <View style={{ flex: 1 }}>
+                        <CurrencyLabel 
+                            icon={selectedCurrency?.image}
+                            currency={`${selectedCurrency?.currency} wallet`}
+                            code={selectedCurrency?.code}
+                        />
+                    </View>
+
+                    {/* Amount */}
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={{ marginRight: SIZES.base }}>
+                            <Text style={{ fontSize: 14, fontWeight: 'bold' }}>${selectedCurrency?.wallet.value}</Text>
+                            <Text style={{ textAlign: 'right', color: COLORS.gray, fontSize: 14 }}>
+                                {selectedCurrency?.wallet.crypto} {selectedCurrency?.code}
+                            </Text>
+                        </View>
+                        <Image 
+                            source={icons.right_arrow}
+                            resizeMode="cover"
+                            style={{
+                                width: 20,
+                                height: 20,
+                                tintColor: COLORS.gray
+                            }}
+                        />
+                    </View>
+                </View>
+
+                <TextButton 
+                    label="Buy"
+                    onPress={() => navigation.navigate("Transaction", { currency: selectedCurrency })}
+                />
+            </View>
+        );
+    };
+
+    function renderAbout() {
+        return (
+            <View style={{
+                marginTop: SIZES.padding,
+                marginHorizontal: SIZES.radius,
+                padding: SIZES.padding,
+                borderRadius: SIZES.radius,
+                backgroundColor: COLORS.white,
+                ...styles.shadow
+            }}>
+                <Text style={{ fontSize: 16, fontWeight: 'bold' }}>About {selectedCurrency?.currency}</Text>
+                <Text style={{ marginTop: SIZES.base, fontSize: 14, fontWeight: '500' }}>About {selectedCurrency?.description}</Text>
+            </View>
         )
     }
 
@@ -234,6 +303,14 @@ const CryptoDetail = ({ navigation, route }) => {
             <ScrollView>
                 <View style={{ flex: 1, paddingBottom: SIZES.padding }}>
                     {renderChart()}
+                    {renderBuy()}
+                    {renderAbout()}
+                    <PriceAlert 
+                        customContainerStyle={{
+                            marginTop: SIZES.padding,
+                            marginHorizontal: SIZES.radius
+                        }}
+                    />
                 </View>
             </ScrollView>
         </SafeAreaView>
