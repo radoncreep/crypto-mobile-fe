@@ -24,13 +24,14 @@ export default TransactionHistory = ({ customContainerStyle, history }) => {
 
             <View style={{ flex: 1, marginLeft: SIZES.radius }}>
                 <Text style={{ fontSize: 16 }}>{item.description}</Text>
-                <Text style={{ color: COLORS.gray, fontSize: 16 }}>{item.date}</Text>
+                <Text style={{ color: COLORS.gray, fontSize: 14 }}>{item.date}</Text>
             </View>
 
             <View style={{ flexDirection: 'row', height: '100%', alignItems: 'center' }}>
                 <Text style={{ 
                     color: item.type === "B" ? COLORS.green : COLORS.black,
-                    fontSize: 14
+                    fontSize: 14,
+                    fontWeight: 'bold'
                     }}>
                         {item.amount} {item.currency}
                 </Text>

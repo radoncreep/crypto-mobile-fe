@@ -15,7 +15,7 @@ export default CurrencyLabel = ({ code, currency, icon }) => {
                 }}
             />
             <View style={{ marginLeft: SIZES.base }}>
-                <Text style={{ fontSize: 16 }}>{currency}</Text>
+                <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{currency}</Text>
                 <Text style={{ color: COLORS.gray, fontSize: 14 }}>{code}</Text>
             </View>
         </View>

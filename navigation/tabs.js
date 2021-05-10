@@ -109,7 +109,7 @@ const Tabs = () => {
                             />
                             <Text style={{
                                 color: focused ? COLORS.primary :  COLORS.black,
-                            }}>PORTFOLIO</Text>
+                            }}>Portfolio</Text>
                         </View>
                     )
                 }}
@@ -154,7 +154,7 @@ const Tabs = () => {
                             />
                             <Text style={{
                                 color: focused ? COLORS.primary :  COLORS.black,
-                            }}>PRICES</Text>
+                            }}>Prices</Text>
                         </View>
                     )
                 }}
@@ -176,7 +176,7 @@ const Tabs = () => {
                             />
                             <Text style={{
                                 color: focused ? COLORS.primary :  COLORS.black,
-                            }}>SETTINGS</Text>
+                            }}>Settings</Text>
                         </View>
                     )
                 }}
