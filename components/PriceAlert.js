@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
 import { COLORS, icons, SIZES } from "../constants";
 
 
@@ -11,7 +11,7 @@ export default PriceAlert = ({ customContainerStyle }) => {
             style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-                marginTop: SIZES.padding * 4.5,
+                marginTop: SIZES.padding * 4,
                 marginHorizontal: SIZES.padding,
                 paddingVertical: SIZES.padding,
                 paddingHorizontal: SIZES.radius,

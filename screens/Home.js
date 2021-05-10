@@ -22,7 +22,7 @@ const Home = ({ navigation }) => {
     const [ transactionHistory, setTransactionHistory ] = useState(dummyData.transactionHistory);
 
     useEffect(() => {
-        LogBox.ignoreLogs(["VirtualizedLists should never be nested"])
+        LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
     }, []);
 
     // useEffect(() => {
@@ -45,7 +45,7 @@ const Home = ({ navigation }) => {
     // }, []);
 
     function renderHeader() {
-        
+        // Flatlist function for renderItem
         const renderItem = ({ item, index }) => (
             <TouchableOpacity
                 style={{
@@ -58,6 +58,7 @@ const Home = ({ navigation }) => {
                     backgroundColor: COLORS.white,
                     ...styles.shadow
                 }}
+                onPress={() => navigation.navigate('CryptoDetail', { currency: item })}
             >
                 {/* Currency */}
                 <View style={{ flexDirection: 'row' }}>
@@ -81,7 +82,7 @@ const Home = ({ navigation }) => {
                 {/* Value */}
                 <View style={{ marginTop: SIZES.radius }}>
                     <Text style={{ fontSize: 16, fontWeight: 'bold' }}>${item.amount}</Text>
-                    <Text style={{ color: item.type ==- "i" ? 'green' : COLORS.red, fontSize: 14 }}>${item.changes}</Text>
+                    <Text style={{ color: item.type === "I" ? 'green' : COLORS.red, fontSize: 14 }}>${item.changes}</Text>
                 </View>
             </TouchableOpacity>
         );
