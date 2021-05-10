@@ -21,9 +21,28 @@ export default TransactionHistory = ({ customContainerStyle, history }) => {
                     tintColor: COLORS.primary
                 }}
             />
+
             <View style={{ flex: 1, marginLeft: SIZES.radius }}>
                 <Text style={{ fontSize: 16 }}>{item.description}</Text>
                 <Text style={{ color: COLORS.gray, fontSize: 16 }}>{item.date}</Text>
+            </View>
+
+            <View style={{ flexDirection: 'row', height: '100%', alignItems: 'center' }}>
+                <Text style={{ 
+                    color: item.type === "B" ? COLORS.green : COLORS.black,
+                    fontSize: 14
+                    }}>
+                        {item.amount} {item.currency}
+                </Text>
+
+                <Image
+                    source={icons.right_arrow}
+                    style={{
+                        width: 15,
+                        height: 15,
+                        tintColor: COLORS.gray
+                    }}
+                />
             </View>
         </TouchableOpacity>
     )

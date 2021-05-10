@@ -23,7 +23,7 @@ const TabBarCustomButton = ({ children, onPress}) => {
         <View>
             <TouchableOpacity
                 style={{
-                    top: -30,
+                    top: -15,
                     justifyContent: 'center',
                     alignItems: 'center',
                     ...styles.shadow
@@ -33,8 +33,8 @@ const TabBarCustomButton = ({ children, onPress}) => {
                 <LinearGradient
                     colors={[COLORS.primary, COLORS.secondary]}
                     style={{
-                        width: 70,
-                        height: 70,
+                        width: 60,
+                        height: 60,
                         borderRadius: 35
                     }}
                 >
@@ -42,8 +42,8 @@ const TabBarCustomButton = ({ children, onPress}) => {
                 </LinearGradient>
             </TouchableOpacity>
         </View>
-    )
-}
+    );
+};
 
 const Tabs = () => {
 
@@ -80,8 +80,8 @@ const Tabs = () => {
                                 source={icons.home}
                                 resizeMode="contain"
                                 style={{
-                                    width: 30,
-                                    height: 30,
+                                    width: 25,
+                                    height: 25,
                                     tintColor: focused ? COLORS.primary : COLORS.black
                                 }}
                             />
@@ -102,8 +102,8 @@ const Tabs = () => {
                                 source={icons.pie_chart}
                                 resizeMode="contain"
                                 style={{
-                                    width: 30,
-                                    height: 30,
+                                    width: 25,
+                                    height: 25,
                                     tintColor: focused ? COLORS.primary : COLORS.black
                                 }}
                             />
@@ -123,8 +123,8 @@ const Tabs = () => {
                             source={icons.transaction}
                             resizeMode="contain"
                             style={{
-                                width: 30,
-                                height: 30,
+                                width: 25,
+                                height: 25,
                                 tintColor: COLORS.white
                             }}
                         />
@@ -147,8 +147,8 @@ const Tabs = () => {
                                 source={icons.line_graph}
                                 resizeMode="contain"
                                 style={{
-                                    width: 30,
-                                    height: 30,
+                                    width: 25,
+                                    height: 25,
                                     tintColor: focused ? COLORS.primary : COLORS.black
                                 }}
                             />
@@ -169,8 +169,8 @@ const Tabs = () => {
                                 source={icons.settings}
                                 resizeMode="contain"
                                 style={{
-                                    width: 30,
-                                    height: 30,
+                                    width: 25,
+                                    height: 25,
                                     tintColor: focused ? COLORS.primary : COLORS.black
                                 }}
                             />
