@@ -7,6 +7,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "icon": "./assets/icons/home.png",
+    "splash": {
+      "image": "./assets/images/splash/android/drawable-xxxhdpi/launch_screen.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    }
   }
 }
